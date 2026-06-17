@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday My Love ❤️</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    height:100vh;
+    overflow:hidden;
+    background:linear-gradient(135deg,#ff758c,#ff7eb3,#ff9a9e);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+
+.container{
+    z-index:10;
+    color:white;
+    padding:30px;
+    max-width:800px;
+    animation:fadeIn 2s ease;
+}
+
+h1{
+    font-size:4rem;
+    text-shadow:0 0 20px rgba(255,255,255,0.8);
+    margin-bottom:20px;
+}
+
+h2{
+    font-size:2rem;
+    margin-bottom:20px;
+}
+
+p{
+    font-size:1.3rem;
+    line-height:1.8;
+}
+
+.love-btn{
+    margin-top:30px;
+    padding:15px 35px;
+    border:none;
+    border-radius:50px;
+    font-size:1.2rem;
+    cursor:pointer;
+    background:white;
+    color:#ff4f81;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.love-btn:hover{
+    transform:scale(1.1);
+    box-shadow:0 0 25px white;
+}
+
+.heart{
+    position:absolute;
+    color:#ff1744;
+    animation:float linear infinite;
+    user-select:none;
+}
+
+@keyframes float{
+    0%{
+        transform:translateY(100vh) scale(0);
+        opacity:0;
+    }
+    20%{
+        opacity:1;
+    }
+    100%{
+        transform:translateY(-120px) scale(1.5);
+        opacity:0;
+    }
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+#specialMessage{
+    margin-top:20px;
+    font-size:1.5rem;
+    color:#fff;
+    font-weight:bold;
+    opacity:0;
+    transition:1s;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1>🎂 Happy Birthday My Love ❤️</h1>
+
+    <h2>To NIGAR JI 💖</h2>
+
+    <p>
+        Happy Birthday, my sweetheart. ❤️<br><br>
+
+        Nigar ji you are my happiness, my puchuu, my baby, and the most precious part of my life.
+        Every moment with you feels like a beautiful dream that I never want to end.
+        Thank you for being mine in this world with love, kiss, and endless our kuchiku.
+        Today is all about celebrating the lovely kisses which you have.
+        I love you Nigar ji more than words and i both can express. 💕
+    </p>
+
+    <button class="love-btn" onclick="showMessage()">
+        Click for More Love ❤️
+    </button>
+
+    <div id="specialMessage">
+        🌹 You are my today, my tomorrow, and my forever. 🌹<br>
+        ❤️ Happy Birthday, My patni ji ❤️
+    </div>
+</div>
+
+<script>
+// Floating Hearts
+function createHeart(){
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+
+    heart.innerHTML = "❤️";
+
+    heart.style.left = Math.random() * window.innerWidth + "px";
+    heart.style.fontSize = (20 + Math.random() * 40) + "px";
+
+    const duration = 4 + Math.random() * 6;
+    heart.style.animationDuration = duration + "s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(()=>{
+        heart.remove();
+    }, duration * 1000);
+}
+
+setInterval(createHeart, 150);
+
+// Button Message
+function showMessage(){
+    const msg = document.getElementById("specialMessage");
+    msg.style.opacity = "1";
+
+    // Heart Explosion
+    for(let i=0;i<50;i++){
+        setTimeout(createHeart, i*50);
+    }
+}
+
+// Initial Heart Burst
+for(let i=0;i<30;i++){
+    setTimeout(createHeart, i*100);
+}
+</script>
+
+</body>
+</html>
